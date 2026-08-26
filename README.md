@@ -6,6 +6,10 @@ NEXUS started as a **Framer-inspired landing page experiment**, mixing React, Th
 
 Nothing too serious — just me messing around, learning, and creating new shizz. ⚡
 
+## 🔗 Live Demo
+
+**[View NEXUS Live](https://nexus-pied-eight-79.vercel.app/)**
+
 ## Built With
 
 * React
@@ -22,4 +26,3 @@ npm run dev
 ```
 
 Built as an experiment. More weird stuff coming soon. 🫡
-
