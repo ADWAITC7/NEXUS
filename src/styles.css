@@ -1,0 +1,196 @@
+:root {
+  --paper: #d1d1d1;
+  --ink: #1d211a;
+  --ink-dim: rgba(29, 33, 26, 0.62);
+  --green-deep: #3a5110;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+/*
+ * The type layer floats above the canvas and ignores the pointer as a
+ * whole, so the cursor parallax works everywhere on the page; only the
+ * links opt back in.
+ */
+.ui {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui a {
+  pointer-events: auto;
+}
+
+.ui__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.ui__brand {
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.24em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.ui__brand sup {
+  font-size: 0.55em;
+}
+
+.ui__spark {
+  color: var(--green-deep);
+  margin-right: 0.45rem;
+}
+
+.ui__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2.1rem);
+}
+
+.ui__nav a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.ui__nav a:hover,
+.ui__nav a:focus-visible {
+  color: var(--ink);
+}
+
+.ui__nav .ui__contact {
+  padding: 0.62rem 1.15rem;
+  border-radius: 99px;
+  background: #171a14;
+  color: #eef0e8;
+}
+
+.ui__nav .ui__contact:hover,
+.ui__nav .ui__contact:focus-visible {
+  color: #ffffff;
+}
+
+.ui__copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 34rem;
+  padding-left: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.ui__eyebrow {
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(29, 33, 26, 0.5);
+}
+
+.ui__copy h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(3.4rem, 7.2vw, 6.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.ui__copy h1 em {
+  font-style: italic;
+  color: var(--green-deep);
+}
+
+.ui__lede {
+  margin: 1.6rem 0 0;
+  max-width: 29rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.ui__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.ui__primary {
+  padding: 0.85rem 1.5rem;
+  border-radius: 99px;
+  background: #171a14;
+  color: #eef0e8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ui__secondary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ui__foot {
+  padding: 1.4rem clamp(1.5rem, 3vw, 2.75rem);
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+}
+
+.ui__index {
+  color: var(--green-deep);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .ui__nav a:not(.ui__contact) {
+    display: none;
+  }
+}
